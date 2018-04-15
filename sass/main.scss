@@ -1,0 +1,42 @@
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+$color-grid-background: #777;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;  
+}
+
+.row {
+  max-width: $grid-width;
+  background-color: $color-grid-background;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  
+  &:not(:last-child){
+    margin-bottom: $gutter-horizontal;
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+}
